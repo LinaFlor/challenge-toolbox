@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./mern-challenge-back
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - FILES_API_URL=http://backend:3001
+    networks:
+      - app-network
+
+  frontend:
+    build: ./mern-challenge-front
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
