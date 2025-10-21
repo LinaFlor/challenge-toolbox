@@ -1,7 +1,7 @@
 {
   "name": "challenge-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "API for Challenge App",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
