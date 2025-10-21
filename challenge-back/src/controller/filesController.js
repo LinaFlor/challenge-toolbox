@@ -44,10 +44,8 @@ async function getFilesList(req, res) {
   try {
     const files = await filesService.fetchFileList();
     res.status(200).json({ files });
-  } catch {
-    res.status(500).json({ 
-      message: 'Error fetching file list'
-    });
+  } catch (err) {
+    next(err);
   }
 };
 
