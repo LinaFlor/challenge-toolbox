@@ -1,5 +1,16 @@
 const filesService = require('../services/files.service');
 
+/**
+ * Controller to get and format file data.
+ * If a query param ?fileName is passed, it returns only the information of that file.
+ *
+ * @async
+ * @function getFilesData
+ * @param {import('express').Request} req - HTTP request object from Express.
+ * @param {import('express').Response} res - HTTP response object from Express.
+ * @returns {Promise<void>} Sends a JSON response with the file data or an error.
+ */
+
 async function getFilesData(req, res) {
   try {
     const { fileName } = req.query || null;
@@ -18,6 +29,16 @@ async function getFilesData(req, res) {
     });
   }
 }
+
+/**
+ * Controller to get files list from external API.
+ *
+ * @async
+ * @function getFilesList
+ * @param {import('express').Request} req - HTTP request object from Express.
+ * @param {import('express').Response} res - HTTP response object from Express.
+ * @returns {Promise<void>} Sends a JSON response with the list of files or an error.
+ */
 
 async function getFilesList(req, res) {
   try {
