@@ -66,4 +66,11 @@ describe('Files routes', function() {
   assert.strictEqual(res.statusCode, 404);
   assert.ok(res.body && res.body.message);
   });
+  
+  it('GET /non-existent returns 404 and JSON error', async () => {
+    const res = await request('/non-existent');
+    assert.strictEqual(res.statusCode, 404);
+    // Should return a JSON object with an error property (from errorHandler)
+    assert.ok(res.body && (res.body.error || res.body.message), 'Error message missing in 404 response');
+  });
 });
