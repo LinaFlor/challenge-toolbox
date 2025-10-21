@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    build: ./mern-challenge-back
+    build: ./challenge-back
     ports:
       - "3001:3001"
     environment:
@@ -12,7 +12,7 @@ services:
       - app-network
 
   frontend:
-    build: ./mern-challenge-front
+    build: ./challenge-front
     ports:
       - "3000:80"
     depends_on:

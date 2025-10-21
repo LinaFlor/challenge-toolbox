@@ -1,4 +1,4 @@
-# mern-challenge-back
+# challenge-back
 
 ## Descripción
 Servicio backend en Node.js/Express que expone API para listar y parsear archivos CSV remotos. El servicio:

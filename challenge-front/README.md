@@ -1,7 +1,7 @@
-# mern-challenge-front
+# challenge-front
 
 ## Descripción
-- Frontend en React (Create React App) que consume la API del servicio backend (mern-challenge-back) para listar y mostrar datos parseados de archivos CSV.
+- Frontend en React (Create React App) que consume la API del servicio backend (challenge-back) para listar y mostrar datos parseados de archivos CSV.
 
 ## Características
 - Lista de archivos remotos.

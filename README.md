@@ -1,12 +1,12 @@
-# MERN Challenge Toolbox - Fullstack App
+# Challenge Toolbox - Fullstack App
 
-Este repositorio contiene el **frontend** y **backend** de la aplicación del MERN Challenge, listos para correr usando **Docker**.
+Este repositorio contiene el **frontend** y **backend** de la aplicación del Challenge, listos para correr usando **Docker**.
 
 ## Estructura del repositorio
 
 challenge-toolbox/
-├── mern-challenge-back/ # Backend Node.js (API)
-├── mern-challenge-front/ # Frontend React
+├── challenge-back/ # Backend Node.js (API)
+├── challenge-front/ # Frontend React
 └── docker-compose.yml # Orquesta ambos servicios con Docker
 
 
