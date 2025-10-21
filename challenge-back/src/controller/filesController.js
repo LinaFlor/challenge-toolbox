@@ -1,3 +1,5 @@
+
+const logger = require('../middleware/logger');
 const filesService = require('../services/files.service');
 
 /**
@@ -14,16 +16,20 @@ const filesService = require('../services/files.service');
 async function getFilesData(req, res) {
   try {
     const { fileName } = req.query || null;
+    logger.info(`Request to getFilesData${fileName ? ` for file: ${fileName}` : ''}`);
     const result = await filesService.getFilesData(fileName);
 
     if (fileName && result === null) {
+      logger.warn(`File not found: ${fileName}`);
       return res.status(404).json({
         message: `File "${fileName}" not found`
       });
     }
 
+    logger.info(`Files data returned${fileName ? ` for file: ${fileName}` : ''}`);
     res.status(200).json(result);
-  } catch {
+  } catch (err) {
+    logger.error('Error processing files', err);
     res.status(500).json({ 
       message: 'Error processing files'
     });
@@ -42,10 +48,13 @@ async function getFilesData(req, res) {
 
 async function getFilesList(req, res) {
   try {
+    logger.info('Request to getFilesList');
     const files = await filesService.fetchFileList();
+    logger.info('Files list returned');
     res.status(200).json({ files });
   } catch (err) {
-    next(err);
+    logger.error('Error fetching files list', err);
+    res.status(500).json({ message: 'Error fetching files list' });
   }
 };
 
