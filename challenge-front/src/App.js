@@ -1,5 +1,5 @@
 import './App.css';
-import FilesTable from './Components/FilesTable';
+import FilesTable from './components/FilesTable';
 
 function App() {
   return (

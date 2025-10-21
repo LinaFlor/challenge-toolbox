@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import FilterByName from '../Components/FilterByName';
+import FilterByName from '../components/FilterByName';
 
 describe('FilterByName', () => {
   it('renders input and buttons', () => {
