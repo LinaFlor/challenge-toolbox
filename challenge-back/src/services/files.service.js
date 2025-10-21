@@ -2,7 +2,8 @@ const axios = require('axios');
 const { parseCSVContent } = require('../utils/csvParser');
 
 const FILES_API_URL = 'https://echo-serv.tbxnet.com/v1/secret';
-const AUTH_HEADER = { Authorization: 'Bearer aSuperSecretKey' };
+const AUTH_HEADER = { Authorization: 'Bearer aSuperSecretKey' }; // This token would normally be on a .env file but the challenge asked not to depend on an external file
+
 
 /**
  * Fetches the list of available files from the external API.
